@@ -1,7 +1,9 @@
+// bring in required packages
 const notes = require('express').Router();
 const { v4: uuid } = require('uuid');
 const fs = require('fs'); 
 
+// GET route to get all notes
 notes.get('/', (req, res) => {
     console.info(`${req.method} request received. GETTING notes...`);
 
@@ -9,6 +11,7 @@ notes.get('/', (req, res) => {
         err ? console.log(err) : res.json(JSON.parse(data)));
 });
 
+// POST route to send note data to db and create note
 notes.post('/', (req, res) => {
     console.log(`${req.method} request received. POSTING note...`);
     const { title, text } = req.body 
@@ -26,6 +29,6 @@ notes.post('/', (req, res) => {
     } else {
         res.error('Sorry. Could not create new note.')
     }
-})
+});
 
 module.exports = notes;
