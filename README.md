@@ -12,6 +12,7 @@
   - [Tests](#tests)
   - [License](#license)
   - [Questions](#questions)
+  - [Deployment](#deployment)
 
   ## Installation 
   To install the necessary dependencies, from the terminal, run "npm i"
